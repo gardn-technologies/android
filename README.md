@@ -1,2 +1,2 @@
-# android
+# Gardn Android Client
 Android Client
