@@ -1,12 +1,15 @@
 package nyc.gardn.android.models.profiles;
 
-import android.location.Address;
+import com.firebase.client.Firebase;
 
 import java.util.List;
 
+import nyc.gardn.android.SecretConstants;
 import nyc.gardn.android.models.Sector;
 
 public abstract class Profile {
+    private static final Firebase ref = new Firebase(SecretConstants.FIREBASE_URL).child("profiles");
+
     String name;
     String website;
     List<Sector> sectors;
@@ -42,5 +45,9 @@ public abstract class Profile {
 
     public void setLocation(Integer location) {
         this.location = location;
+    }
+
+    public static Firebase getParentRef() {
+        return ref;
     }
 }
